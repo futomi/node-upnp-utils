@@ -52,16 +52,16 @@ var upnp = require('node-upnp-utils');
 // Set an event listener for 'added' event
 upnp.on('added', (device) => {
   // This callback function will be called whenever an device was added.
-	var name = device['description']['device']['friendlyName'];
-	var addr = device['address'];
+  var name = device['description']['device']['friendlyName'];
+  var addr = device['address'];
   console.log('Added ' + name + ' (' + addr + ')');
 });
 
 // Set an event listener for 'deleted' event
 upnp.on('deleted', (device) => {
   // This callback function will be called whenever an device was deleted.
-	var name = device['description']['device']['friendlyName'];
-	var addr = device['address'];
+  var name = device['description']['device']['friendlyName'];
+  var addr = device['address'];
   console.log('Deleted ' + name + ' (' + addr + ')');
 });
 
@@ -114,23 +114,23 @@ soap += '  </s:Body>';
 soap += '</s:Envelope>';
 
 var params = {
-	'url': 'http://192.168.10.4:20003/MediaServer/ContentDirectory/Control',
-	'soap': soap
+  'url': 'http://192.168.10.4:20003/MediaServer/ContentDirectory/Control',
+  'soap': soap
 };
 
 upnp.invokeAction(params, (err, obj, xml, res) => {
-	if(err) {
-		console.log('[ERROR]');
-		console.dir(err);
-	} else {
-		if(res['statusCode'] === 200) {
-			console.log('[SUCCESS]');
-		} else {
-			console.log('[ERROR]');
-		}
-		console.log('----------------------------------');
-		console.log(JSON.stringify(obj, null, '  '))
-	}
+  if(err) {
+    console.log('[ERROR]');
+    console.dir(err);
+  } else {
+    if(res['statusCode'] === 200) {
+      console.log('[SUCCESS]');
+    } else {
+      console.log('[ERROR]');
+    }
+    console.log('----------------------------------');
+    console.log(JSON.stringify(obj, null, '  '))
+  }
 });
 ```
 
@@ -171,9 +171,9 @@ This value must be an object having the members as follows:
   <dt>mx<dt>
   <dd>
     This value is used for the value of the MX header of M-Search. This value must be an integer. The default value is 3 (seconds).
-	</dd>
-	<dt>st</dt>
-	<dd>The value of the ST header of M-Search. The default value is "upnp:rootdevice".
+  </dd>
+  <dt>st</dt>
+  <dd>The value of the ST header of M-Search. The default value is "upnp:rootdevice".
 </dl>
 
 ```JavaScript
@@ -216,20 +216,20 @@ This value must be an object having the members as follows:
 <dl>
   <dt>url (required)</dt>
   <dd>
-	  This value is the URL of the targeted device (service).
-	<dd>
+    This value is the URL of the targeted device (service).
+  <dd>
   <dt>sorp (required)</dt>
   <dd>
-	  This value is the SOAP string which you want to post.
-	</dd>
-	<dt>action (optional)</dt>
+    This value is the SOAP string which you want to post.
+  </dd>
+  <dt>action (optional)</dt>
   <dd>
-	  This value is the value of the SOAPAction header. If this value was not specified, this method will search the SOAPAction value from the specified SOAP string.
-	</dd>
+    This value is the value of the SOAPAction header. If this value was not specified, this method will search the SOAPAction value from the specified SOAP string.
+  </dd>
   <dt>cookies (optional)</dt>
-	<dd>
+  <dd>
     This value is an array of cookies. e.x. ['key1:value;', 'key2:value;']
-	<dd>
+  <dd>
 </dl>
 
 ##### *callback* (required)

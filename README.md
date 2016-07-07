@@ -167,14 +167,11 @@ If this method is called again during this discovery process is ongoing, an Exce
 
 This value must be an object having the members as follows:
 
-<dl>
-  <dt>mx<dt>
-  <dd>
-    This value is used for the value of the MX header of M-Search. This value must be an integer. The default value is 3 (seconds).
-  </dd>
-  <dt>st</dt>
-  <dd>The value of the ST header of M-Search. The default value is "upnp:rootdevice".
-</dl>
+
+member | required | description
+-------|----------|------------------
+mx     | optional | This value is used for the value of the MX header of M-Search. This value must be an integer. The default value is 3 (seconds).
+st     | optional | The value of the ST header of M-Search. The default value is "upnp:rootdevice".
 
 ```JavaScript
 upnp.startDiscovery({

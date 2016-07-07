@@ -213,24 +213,24 @@ This method sends the specified SOAP string to the specified device.
 
 This value must be an object having the members as follows:
 
-<dl>
-  <dt>url (required)</dt>
-  <dd>
-    This value is the URL of the targeted device (service).
-  <dd>
-  <dt>sorp (required)</dt>
-  <dd>
-    This value is the SOAP string which you want to post.
-  </dd>
-  <dt>action (optional)</dt>
-  <dd>
-    This value is the value of the SOAPAction header. If this value was not specified, this method will search the SOAPAction value from the specified SOAP string.
-  </dd>
-  <dt>cookies (optional)</dt>
-  <dd>
-    This value is an array of cookies. e.x. ['key1:value;', 'key2:value;']
-  <dd>
-</dl>
+	<dl>
+	  <dt>url (required)</dt>
+	  <dd>
+	    This value is the URL of the targeted device (service).
+	  <dd>
+	  <dt>soap (required)</dt>
+	  <dd>
+	    This value is the SOAP string which you want to post.
+	  </dd>
+	  <dt>action (optional)</dt>
+	  <dd>
+	    This value is the value of the SOAPAction header. If this value was not specified, this method will search the SOAPAction value from the specified SOAP string.
+	  </dd>
+	  <dt>cookies (optional)</dt>
+	  <dd>
+	    This value is an array of cookies. e.x. ['key1:value1', 'key2:value2']
+	  <dd>
+	</dl>
 
 ##### *callback* (required)
 

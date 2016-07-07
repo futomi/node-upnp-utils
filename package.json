@@ -1,0 +1,30 @@
+{
+  "name": "node-upnp-utils",
+  "version": "0.0.1",
+  "description": "The upnp-utils is a Node.js module, which allows you to discover UPnP devices or services in the same subnet and to invole actions or queries to the targeted device.",
+  "main": "./lib/node-upnp-utils.js",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "upnp",
+    "ssdp"
+  ],
+  "homepage": "https://github.com/futomi",
+  "author": "Futomi Hatano <futomi.hatano@gmail.com> (https://github.com/futomi)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/futomi/node-upnp-utils.git"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "xml2js": ">=0.4.1"
+  }
+}

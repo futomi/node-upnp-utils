@@ -1,6 +1,6 @@
 {
   "name": "node-upnp-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The upnp-utils is a Node.js module, which allows you to discover UPnP devices or services in the same subnet and to invole actions or queries to the targeted device.",
   "main": "./lib/node-upnp-utils.js",
   "files": [

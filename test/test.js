@@ -5,14 +5,18 @@ var upnp = require('../lib/node-upnp-utils.js');
 
 upnp.on('added', (device) => {
 	console.log('================================================ [added]');
+	/*
 	console.log(' * ' + device['headers']['$']);
 	console.log(' * ' + device['address']);
 	console.log(' * ' + device['description']['device']['friendlyName']);
 	console.log(' * ' + device['headers']['LOCATION']);
 	console.log(' * ' + device['headers']['USN']);
+	*/
+
+	console.log(JSON.stringify(device['description']['device'], null, '  '));
 	console.log('');
 });
-
+/*
 upnp.on('deleted', (device) => {
 	console.log('================================================== [deleted]');
 	console.log(' * ' + device['headers']['$']);
@@ -22,7 +26,7 @@ upnp.on('deleted', (device) => {
 	console.log(' * ' + device['headers']['USN']);
 	console.log('');
 });
-
+*/
 upnp.on('error', (err) => {
 	console.dir(err);
 });
@@ -31,8 +35,10 @@ upnp.on('error', (err) => {
 upnp.startDiscovery({mx:3});
 
 setTimeout(() => {
+	console.log("hogehoge!!!!!!!!!!!!!!!!!!");
 	upnp.stopDiscovery(() => {
 		console.log('Stopped the discovery process.');
-		process.exit();
+		//process.exit();
+		upnp.startDiscovery({mx:3});
 	});
-}, 60000);
+}, 3000);

@@ -445,6 +445,8 @@ On Windows, the "SSDP Discovery" service (SSDPSRV) is enabled by default. This s
 ---------------------------------------
 ## Release Note
 
+* v1.0.2 (2024-06-29)
+    * Fixed the bug that the script using this module was not terminated even though the discovery process was finished.
 * v1.0.1 (2024-06-29)
     * Ignored network interfaces assigned a global IP address in the M-SEARCH process.
 * v1.0.0 (2023-10-03)

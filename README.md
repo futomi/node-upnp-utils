@@ -3,7 +3,7 @@ node-upnp-utils
 
 The node-upnp-utils is a SSDP (Simple Service Discovery Protocol) client implementation. It allows you to discover UPnP devices or services in the same subnet and to fetch device descriptions (XML) from the discovered devices.
 
-Note that this module does *not* work well on Windows.
+Note that this module does *not* work well on Windows by the default Windows setting. See the section "[Running on Windows](#running-on-windows)" for detail.
 
 ## Dependencies
 
@@ -32,6 +32,7 @@ $ npm install node-upnp-utils
   * [`added` event](#added-event)
   * [`deleted` event](#deleted-event)
 * [The structure of discovered device](#the-structure-of-discovered-device)
+* [Running on Windows](#running-on-windows)
 * [Release Note](#Release-Note)
 * [References](#References)
 * [License](#License)
@@ -435,8 +436,17 @@ Properties       | Type   | Description
 `descriptionXML` | String | This string is the XML itself fetched from the device. If failed to fetch the XML, this property would not exist.
 
 ---------------------------------------
+## Running on Windows
+
+This module does *not* work well on Windows by the default Windows setting.
+
+On Windows, the "SSDP Discovery" service (SSDPSRV) is enabled by default. This service prevents the discovery process of this module. If you want to discover UPnP devices using this module, stop the "SSDP Discovery" service (SSDPSRV).
+
+---------------------------------------
 ## Release Note
 
+* v1.0.1 (2024-06-29)
+    * Ignored network interfaces assigned a global IP address in the M-SEARCH process.
 * v1.0.0 (2023-10-03)
     * Rewrote all codes in modern coding style using `class`, `async`, `await`, etc.
     * Supported multi-homed environment.
@@ -456,7 +466,7 @@ Properties       | Type   | Description
 
 The MIT License (MIT)
 
-Copyright (c) 2017 - 2023 Futomi Hatano
+Copyright (c) 2017 - 2024 Futomi Hatano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

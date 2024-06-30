@@ -167,7 +167,7 @@ Property | Type    | Required | Description
 ---------|---------|----------|--------
 `mx`     | Integer | Optional | MX header of M-Search. This value must be an integer in the range of 1 to 120. The default value is 3 (seconds).
 `st`     | String  | Optional | ST header of M-Search. The default value is `upnp:rootdevice`.
-`wait`   | Integer | Optional | This method waits the M-Search responses for the specified number of seconds. The value must be in the range of 1 to 60. The default value is 5 seconds.
+`wait`   | Integer | Optional | This method waits the M-Search responses for the specified number of seconds. The value must be in the range of 1 to 120. The default value is 5 seconds.
 
 ```javascript
 const device_list = await upnp.discover({
@@ -445,6 +445,8 @@ On Windows, the "SSDP Discovery" service (SSDPSRV) is enabled by default. This s
 ---------------------------------------
 ## Release Note
 
+* v1.0.3 (2024-06-30)
+    * Improved the fetch process of UPnP device descriptions.
 * v1.0.2 (2024-06-29)
     * Fixed the bug that the script using this module was not terminated even though the discovery process was finished.
 * v1.0.1 (2024-06-29)
